@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>2996708081-ham9c5aoc5qgkd14uab7bmlnp5u3mccb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.2996708081-ham9c5aoc5qgkd14uab7bmlnp5u3mccb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAtl6sPOhCpFWkctzCoW8bqUmCEJ7kVJIk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>2996708081</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.phollux.org.mary</string>
+	<key>PROJECT_ID</key>
+	<string>mary-health-app-dev</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mary-health-app-dev.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:2996708081:ios:357a5e1dc07ca452383f50</string>
+</dict>
+</plist>

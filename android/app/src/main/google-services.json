@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "574727339286",
+    "project_id": "mary-health-app",
+    "storage_bucket": "mary-health-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574727339286:android:20d6a4a54e088555b42437",
+        "android_client_info": {
+          "package_name": "com.phollux.org.mary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574727339286-6v75hddahjv9utm0vqj6l59f5ic8o5em.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB13uXLkW52DKnCZiRhZJ_5O9L7nKpmYU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574727339286-6v75hddahjv9utm0vqj6l59f5ic8o5em.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

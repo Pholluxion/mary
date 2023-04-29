@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "2996708081",
+    "project_id": "mary-health-app-dev",
+    "storage_bucket": "mary-health-app-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2996708081:android:45c2473404c1bf87383f50",
+        "android_client_info": {
+          "package_name": "com.phollux.org.mary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2996708081-m2kn2a0f3ph3otfir7c71rhc8gv5u4gr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsfmEAp3c74gMNifAgHpPugxE5-X8jv2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2996708081-m2kn2a0f3ph3otfir7c71rhc8gv5u4gr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "2996708081-ham9c5aoc5qgkd14uab7bmlnp5u3mccb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.phollux.org.mary"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2996708081:android:697e2cfc4f400986383f50",
+        "android_client_info": {
+          "package_name": "com.phollux.org.mary.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2996708081-m2kn2a0f3ph3otfir7c71rhc8gv5u4gr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsfmEAp3c74gMNifAgHpPugxE5-X8jv2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2996708081-m2kn2a0f3ph3otfir7c71rhc8gv5u4gr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "2996708081-ham9c5aoc5qgkd14uab7bmlnp5u3mccb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.phollux.org.mary"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
