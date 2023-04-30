@@ -104,7 +104,7 @@ class _HomeViewDocState extends State<HomeViewDoc> {
                         "¡Hora de tomar tus medicamentos con un poco de agua!",
                     payload:
                         "¡Hora de tomar tus medicamentos con un poco de agua!",
-                    seconds: 2,
+                    seconds: 10,
                   );
                 },
                 icon: const Icon(Icons.notification_add),
