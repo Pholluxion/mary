@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mary/features/home/data/exceptions/patient_exception.dart';
 import 'package:mary/features/home/data/repository/home_repository.dart';
 
@@ -29,19 +30,14 @@ class HomeRepositoryImpl implements HomeRepository {
   }
 
   @override
-  Future<Patient?> getPatientById(int id) async {
+  Future<Patient?> getPatientById(String id) async {
     try {
-      final userRef = FirebaseFirestore.instance
-          .collection('patients')
-          .doc(id.toString())
-          .withConverter<Patient>(
-            fromFirestore: (snapshots, _) =>
-                Patient.fromJson(snapshots.data()!),
-            toFirestore: (user, _) => user.toJson(),
-          );
+      final userRef =
+          FirebaseFirestore.instance.collection('patients').doc("P$id");
 
       final patient = await userRef.get();
-      return patient.data();
+
+      return Patient.fromJson(patient.data()!);
     } catch (e) {
       log(e.toString());
       throw PatientFailture(e.toString());
@@ -121,6 +117,43 @@ class HomeRepositoryImpl implements HomeRepository {
                 })
             .toList(),
       });
+    } catch (e) {
+      log(e.toString());
+      throw PatientFailture(e.toString());
+    }
+  }
+
+  Future<void> setPatientLogin({
+    required String email,
+    required String password,
+    required int rol,
+    required Patient patient,
+  }) async {
+    try {
+      final userRef = FirebaseFirestore.instance.collection('login');
+
+      userRef.doc(email).set({
+        "email": email,
+        "password": password,
+        "rol": rol,
+        "patient": patient.patientDTO.id,
+      });
+
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password);
+    } catch (e) {
+      log(e.toString());
+      throw PatientFailture(e.toString());
+    }
+  }
+
+  Future<Map<String, dynamic>> getPatientLogin(String email) async {
+    try {
+      final userRef = FirebaseFirestore.instance.collection('login');
+
+      final user = await userRef.doc(email).get();
+
+      return user.data() ?? {};
     } catch (e) {
       log(e.toString());
       throw PatientFailture(e.toString());

@@ -13,16 +13,19 @@ class AppLoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-      child: BlocBuilder<LoginCubit, LoginState>(
-        buildWhen: (previous, current) =>
-            current.loginForm != previous.loginForm,
-        builder: (context, state) {
-          if (state.loginForm == LoginForm.login) {
-            return const _LoginForm();
-          } else {
-            return const _RecoveryForm();
-          }
-        },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        child: BlocBuilder<LoginCubit, LoginState>(
+          buildWhen: (previous, current) =>
+              current.loginForm != previous.loginForm,
+          builder: (context, state) {
+            if (state.loginForm == LoginForm.login) {
+              return const _LoginForm();
+            } else {
+              return const _RecoveryForm();
+            }
+          },
+        ),
       ),
     );
   }
@@ -89,17 +92,17 @@ class _LoginForm extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                SizedBox(height: 16.0),
+                SizedBox(height: 8.0),
                 _EmailInput(),
                 _PasswordInput(),
                 _RecoveryPassword(),
-                SizedBox(height: 16.0),
+                SizedBox(height: 8.0),
                 _LoginButton(),
-                SizedBox(height: 16.0),
+                SizedBox(height: 8.0),
+                _HelpButton(),
               ],
             ),
           ),
-          const _HelpButton(),
         ],
       ),
     );

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mary/features/login/presentation/pages/pages.dart';
 
 import '../../features/home/presentation/pages/home_page.dart';
+import '../../features/home/presentation/pages/notification_page.dart';
 
 // GoRouter configuration
 final router = GoRouter(
@@ -31,6 +32,12 @@ final router = GoRouter(
           return '/login';
         }
       },
-    )
+      routes: [
+        GoRoute(
+          path: 'notify',
+          builder: (context, state) => const NotificationPage(),
+        )
+      ],
+    ),
   ],
 );

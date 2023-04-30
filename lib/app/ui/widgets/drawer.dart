@@ -48,20 +48,6 @@ class DrawerWidget extends StatelessWidget {
               context.pop();
             },
           ),
-          ListTile(
-            leading: const Icon(Icons.view_agenda),
-            title: Text(
-              "Agenda",
-              style: context.getTextTheme.titleMedium,
-            ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.library_books),
-            title: Text(
-              "Directorio",
-              style: context.getTextTheme.titleMedium,
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.only(top: 48.0),
             child: ListTile(
