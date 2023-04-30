@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:mary/features/login/data/exeptions/login_exceptions.dart';
+import 'package:mary/features/login/data/exceptions/login_exceptions.dart';
 import 'package:mary/features/login/domain/entity/login_dto.dart';
 import 'package:mary/features/login/domain/repository/login_repository.dart';
 
@@ -18,7 +18,7 @@ class LoginCubit extends Cubit<LoginState> {
 
     final passwordRegExp = RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$');
 
-    if (!emailRegExp.hasMatch(email)) {
+    if (!emailRegExp.hasMatch(email) && email.isNotEmpty) {
       emit(state.copyWith(emailErrorMessage: "Correo no valido"));
     } else {
       emit(
@@ -39,7 +39,7 @@ class LoginCubit extends Cubit<LoginState> {
 
     final passwordRegExp = RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$');
 
-    if (!passwordRegExp.hasMatch(password)) {
+    if (!passwordRegExp.hasMatch(password) && password.isNotEmpty) {
       emit(
         state.copyWith(passwordErrorMessage: "Formato de contraseña no valido"),
       );
@@ -89,5 +89,42 @@ class LoginCubit extends Cubit<LoginState> {
     } finally {
       emit(state.copyWith(status: LoginStatus.initial, errorMessage: ""));
     }
+  }
+
+  void recoveryPassword() async {
+    try {
+      emit(state.copyWith(status: LoginStatus.loading));
+      await loginRepository.sendRecoveryPassword(email: state.email);
+    } on LogInWithEmailAndPasswordFailure catch (e) {
+      emit(
+        state.copyWith(
+          status: LoginStatus.error,
+          errorMessage: e.message,
+        ),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(
+          status: LoginStatus.error,
+          errorMessage: e.toString(),
+        ),
+      );
+    } finally {
+      emit(
+        state.copyWith(
+          status: LoginStatus.initial,
+          errorMessage: "",
+          loginForm: LoginForm.login,
+        ),
+      );
+    }
+  }
+
+  void updateForm() {
+    emit(state.copyWith(loginForm: LoginForm.recovery, email: ""));
+  }
+
+  void setLoginForm() {
+    emit(state.copyWith(loginForm: LoginForm.login, email: ""));
   }
 }

@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../domain/entity/login_dto.dart';
-import '../exeptions/login_exceptions.dart';
+import '../exceptions/login_exceptions.dart';
 import '../../domain/repository/login_repository.dart';
 
 class LoginRepositoryImpl implements LoginRepository {

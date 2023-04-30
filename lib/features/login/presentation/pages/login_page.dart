@@ -26,9 +26,8 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(elevation: 10.0),
-      body: const ResponsiveLayoutBuilder(
+    return const Scaffold(
+      body: ResponsiveLayoutBuilder(
         small: _loginFormApp,
         medium: _loginFormTab,
         large: _loginFormWeb,

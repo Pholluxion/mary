@@ -1,13 +1,15 @@
 name: mary
 description: Bienvenido a nuestra aplicación de cuidados de la salud. Aquí encontrarás todas las herramientas y recursos que necesitas para mejorar y mantener tu bienestar físico y mental.
-version: 1.0.0+1
+version: 0.0.1+1
 publish_to: none
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: ">=2.19.0 <3.0.0"
 
 dependencies:
   bloc: ^8.1.1
+  carousel_slider: ^4.2.1
+  cloud_firestore: ^4.5.3
   equatable: ^2.0.5
   firebase_auth: ^4.4.2
   firebase_core: ^2.10.0
@@ -15,20 +17,57 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.2
   flutter_hooks: ^0.18.6
+  flutter_local_notifications: ^14.0.0+1
   flutter_localizations:
     sdk: flutter
-  font_awesome_flutter: ^10.4.0
+  flutter_native_splash: ^2.2.19
+  flutter_staggered_grid_view: ^0.6.2
+  flutter_svg: ^2.0.5
+  flutter_timeline_calendar: ^1.0.5
   go_router: ^6.5.9
   google_fonts: ^4.0.4
   intl: ^0.17.0
+  json_annotation: ^4.8.0
 
 dev_dependencies:
   bloc_test: ^9.1.1
+  build_runner: ^2.3.3
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
+  json_serializable: ^6.6.1
   mocktail: ^0.3.0
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/svg/logo_jpg.jpeg"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/svg/logo_jpg.jpeg"
+    background_color: "#FFFFFF"
+    theme_color: "#FFFFFF"
+
 
 flutter:
   uses-material-design: true
   generate: true
+
+
+  assets:
+  - assets/svg/logo.svg
+  - assets/svg/login.svg
+  - assets/svg/1.svg
+  - assets/svg/2.svg
+  - assets/svg/3.svg
+  - assets/svg/4.svg
+  - assets/svg/5.svg
+  - assets/svg/404.svg
+  - assets/svg/logo_jpg.jpeg
+  - assets/svg/she_profile.svg
+  - assets/svg/he_profile.svg
+  - assets/svg/financial.svg
+  - assets/svg/workout.svg
+

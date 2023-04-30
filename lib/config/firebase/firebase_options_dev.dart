@@ -39,7 +39,6 @@ class DefaultFirebaseOptions {
           'DefaultFirebaseOptions have not been configured for linux - '
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
-      // ignore: no_default_cases
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
@@ -71,8 +70,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '2996708081',
     projectId: 'mary-health-app-dev',
     storageBucket: 'mary-health-app-dev.appspot.com',
-    iosClientId:
-        '2996708081-84djajbqvbisuhqr91uh49vd7c4n899n.apps.googleusercontent.com',
+    iosClientId: '2996708081-84djajbqvbisuhqr91uh49vd7c4n899n.apps.googleusercontent.com',
     iosBundleId: 'com.phollux.org.mary.dev',
   );
 }

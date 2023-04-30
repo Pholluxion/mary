@@ -2,9 +2,12 @@ part of 'login_cubit.dart';
 
 enum LoginStatus { initial, loading, error, succes }
 
+enum LoginForm { login, recovery, help }
+
 class LoginState extends Equatable {
   const LoginState({
     this.status = LoginStatus.initial,
+    this.loginForm = LoginForm.login,
     this.validForm = false,
     this.password = "",
     this.email = "",
@@ -16,24 +19,27 @@ class LoginState extends Equatable {
   final String email;
   final bool validForm;
   final String password;
-  final LoginStatus status;
   final String emailErrorMessage;
   final String passwordErrorMessage;
   final String errorMessage;
+  final LoginStatus status;
+  final LoginForm loginForm;
 
   LoginState copyWith({
     bool? validForm,
     String? email,
     String? password,
-    LoginStatus? status,
     String? errorMessage,
     String? emailErrorMessage,
     String? passwordErrorMessage,
+    LoginStatus? status,
+    LoginForm? loginForm,
   }) =>
       LoginState(
         email: email ?? this.email,
-        password: password ?? this.password,
         status: status ?? this.status,
+        password: password ?? this.password,
+        loginForm: loginForm ?? this.loginForm,
         validForm: validForm ?? this.validForm,
         errorMessage: errorMessage ?? this.errorMessage,
         emailErrorMessage: emailErrorMessage ?? this.emailErrorMessage,
@@ -49,5 +55,6 @@ class LoginState extends Equatable {
         emailErrorMessage,
         passwordErrorMessage,
         errorMessage,
+        loginForm,
       ];
 }

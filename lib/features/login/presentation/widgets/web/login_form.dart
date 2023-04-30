@@ -1,4 +1,6 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mary/features/login/presentation/widgets/widgets.dart';
 
 class WebLoginForm extends StatelessWidget {
@@ -7,15 +9,57 @@ class WebLoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Flexible(flex: 6, child: Container()),
         Flexible(
-          flex: 3,
-          child: Container(
-            color: const Color.fromRGBO(221, 233, 224, 10),
-            child: const AppLoginForm(),
+          flex: 6,
+          child: CarouselSlider(
+            items: [
+              Padding(
+                padding: const EdgeInsets.all(64.0),
+                child: SvgPicture.asset(
+                  'assets/svg/1.svg',
+                  semanticsLabel: "",
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(64.0),
+                child: SvgPicture.asset(
+                  'assets/svg/2.svg',
+                  semanticsLabel: "",
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(64.0),
+                child: SvgPicture.asset(
+                  'assets/svg/3.svg',
+                  semanticsLabel: "",
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(64.0),
+                child: SvgPicture.asset(
+                  'assets/svg/4.svg',
+                  semanticsLabel: "",
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(64.0),
+                child: SvgPicture.asset(
+                  'assets/svg/5.svg',
+                  semanticsLabel: "",
+                ),
+              )
+            ],
+            options: CarouselOptions(
+              autoPlay: true,
+              autoPlayAnimationDuration: const Duration(seconds: 1),
+            ),
           ),
+        ),
+        const Flexible(
+          flex: 3,
+          child: AppLoginForm(),
         ),
       ],
     );
