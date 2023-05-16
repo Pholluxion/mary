@@ -476,10 +476,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_timeline_calendar
-      sha256: "70f758c5f3f466ba3216428e04cbb8176dfb8efbd330bcd06859e67edf079bef"
+      sha256: "1f992e175defcf65ae90aa6a2358b6f4b05e37d26f5bd863e9f3b66934234eff"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.8"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
